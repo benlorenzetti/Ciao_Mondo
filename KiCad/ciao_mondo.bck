@@ -1,0 +1,23 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 2N3906
+D PNP
+K pnp transistor
+$ENDCMP
+#
+$CMP 4116R-1-470LF
+D 8 resistors Pack
+K R DEV
+$ENDCMP
+#
+$CMP ATTINY2313A-P
+D PDIP20, 2k Flash, 128B SRAM, 128B EEPROM
+K AVR 8bit Microcontroller tinyAVR
+F http://www.atmel.com/Images/doc8246.pdf
+$ENDCMP
+#
+$CMP AVR_ISP
+D AVR ISP Header
+$ENDCMP
+#
+#End Doc Library
