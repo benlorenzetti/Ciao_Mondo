@@ -1,6 +1,6 @@
-update=Thu 14 Apr 2016 11:28:57 PM EDT
+update=Wed 04 May 2016 12:08:34 AM EDT
 version=1
-last_client=kicad
+last_client=eeschema
 [pcbnew]
 version=1
 LastNetListRead=
@@ -28,6 +28,11 @@ version=1
 [eeschema]
 version=1
 LibDir=../../KiCad;../../../UC_the_Fish_PCBs/KiCad
+NetFmtName=
+RptD_X=0
+RptD_Y=100
+RptLab=1
+LabSize=60
 [eeschema/libraries]
 LibName1=/home/ben/Documents/Ciao_Mondo/KiCad/ciao_mondo
 LibName2=power

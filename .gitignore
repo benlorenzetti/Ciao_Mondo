@@ -1,0 +1,10 @@
+# Ignore All Intermediate and Hex Output
+*.eep
+*.hex
+*.lst
+*.o
+*.d
+*.elf
+*.lss
+*.map
+*.sym
