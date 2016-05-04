@@ -1,7 +1,7 @@
 /* hello_world.c */
 
 /* Is this Board 1 or 2? */
-#define BOARD 1
+#define BOARD 2
 
 /* Define IO Pins */
 #define DIG0 PB0
@@ -40,20 +40,27 @@ const char en_H = 1 << SEGF | 1 << SEGE | 1 << SEGG | 1 << SEGB | 1 << SEGC;
 const char en_E = 1 << SEGB | 1 << SEGC | 1 << SEGA | 1 << SEGG | 1 << SEGD;
 const char en_L = 1 << SEGB | 1 << SEGC | 1 << SEGA;
 const char en_O = ~(1 << SEGG);
-const char en_o = 1 << SEGF | 1 << SEGA | 1 << SEGB | 1 << SEGG;
-const char en_r = 1 << SEGB | 1 << SEGG;
+const char en_o = 1 << SEGA | 1 << SEGF | 1 << SEGB;
+const char en_r = 1 << SEGB;
 const char en_l = 1 << SEGB | 1 << SEGC;
-const char en_d = 1 << SEGA | 1 << SEGB | 1 << SEGE | 1 << SEGF | 1 << SEGG;
-const char en_exclamation = 1 << SEGE;
-const char en_decimal = 1 << SEGDP;
+const char en_d = 1 << SEGA | 1 << SEGB | 1 << SEGE | 1 << SEGF;
+const char en_exclamation = 1 << SEGE | 1 << SEGG;
+const char en_decimal = 1 << SEGG;
 const char it_C = 1 << SEGA | 1 << SEGF | 1 << SEGE | 1 << SEGD;
-const char it_i = 1 << SEGA | 1 << SEGG | 1 << SEGD | 1 << SEGE | 1 << SEGC;
-const char it_A = ~(1 << SEGD);
+const char it_i = 1 << SEGA | 1 << SEGD | 1 << SEGE | 1 << SEGC;
+const char it_A = ~(1 << SEGD | 1 << SEGG);
 const char it_o = 1 << SEGE | 1 << SEGD | 1 << SEGC | 1 << SEGG;
 const char it_n = 1 << SEGE | 1 << SEGG | 1 << SEGC;
 const char it_d = 1 << SEGE | 1 << SEGD | 1 << SEGC | 1 << SEGG | 1 << SEGB;
 const char it_exclamation = 1 << SEGB;
 const char it_decimal = 1 << SEGDP;
+
+const char en_r_portA = 1 << SEGDP;
+const char en_d_portA = 1 << SEGDP;
+const char it_i_portA = 1 << SEGDP;
+const char it_A_portA = 1 << SEGDP;
+const char en_o_portA = 1 << SEGDP;
+
 
 void display_function (const char *, const char *);
 
@@ -80,9 +87,12 @@ int main (void) {
     else if (BOARD == 2 && (PINA & 1<<TILT) == (ENGLISH << TILT))
     {
       five_letters[4] = en_o;
+      punctuations[4] = en_o_portA;
       five_letters[3] = en_r;
+      punctuations[3] = en_r_portA;
       five_letters[2] = en_l;
       five_letters[1] = en_d;
+      punctuations[1] = en_d_portA;
       five_letters[0] = en_exclamation;
       punctuations[0] = en_decimal;
     }
@@ -92,7 +102,9 @@ int main (void) {
       five_letters[0] = 0;
       five_letters[1] = it_C;
       five_letters[2] = it_i;
+      punctuations[2] = it_i_portA;
       five_letters[3] = it_A;
+      punctuations[3] = it_A_portA;
       five_letters[4] = en_O;
     }
     /* If board #1 and tilted Italian, display "ondo!"              */

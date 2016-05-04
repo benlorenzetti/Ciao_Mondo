@@ -20,7 +20,7 @@ TARGET = hello_world
 # AVRDUDE_PROGRAMMER = dapa
 # AVRDUDE_PROGRAMMER = usbtiny       
 # AVRDUDE_PROGRAMMER = dt006
-AVRDUDE_PROGRAMMER = dragon_isp
+AVRDUDE_PROGRAMMER = jtag3isp
 
 AVRDUDE_PORT = usb
 #AVRDUDE_PORT = /dev/parport0           # linux
